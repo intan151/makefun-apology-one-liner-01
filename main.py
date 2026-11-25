@@ -32,6 +32,8 @@ def validate_entry(text):
 
 def main():
     entry = validate_entry(LINE)
+    # ENTRY_OUTPUT is honoured so the entry can be verified locally
+    # without touching /output; the sandbox run uses the default.
     out_path = os.environ.get("ENTRY_OUTPUT", "/output/entry.txt")
     out_dir = os.path.dirname(out_path)
     if out_dir:
